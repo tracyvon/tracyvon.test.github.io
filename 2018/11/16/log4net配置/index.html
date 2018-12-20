@@ -109,7 +109,7 @@
 <meta property="og:site_name" content="tracyvon&#39;s Hexo Blog">
 <meta property="og:description" content="CS程序 进入需要配置log4net的项目目录下,安装或引用log4net;  右键-管理NuGet程序包,搜索”log4net”并安装; 引用已下载的log4net.dll文件.   程序启动时读取log4net的配置文件,在AssemblyInfo.cs中加入 [assembly: log4net.Config.XmlConfigurator(ConfigFile = &amp;quot;app.co">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-29T14:33:54.356Z">
+<meta property="og:updated_time" content="2018-12-20T07:32:34.368Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="log4net配置">
 <meta name="twitter:description" content="CS程序 进入需要配置log4net的项目目录下,安装或引用log4net;  右键-管理NuGet程序包,搜索”log4net”并安装; 引用已下载的log4net.dll文件.   程序启动时读取log4net的配置文件,在AssemblyInfo.cs中加入 [assembly: log4net.Config.XmlConfigurator(ConfigFile = &amp;quot;app.co">
@@ -442,8 +442,8 @@
 <blockquote>
 <p>eg. [WebService].asmx.cs文件中加入</p>
 </blockquote>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public WebService()</span><br><span class="line">&#123;</span><br><span class="line">    log4net.Config.XmlConfigurator.ConfigureAndWatch(new System.IO.FileInfo(AppDomain.CurrentDomain.SetupInformation.ApplicationBase + &quot;log4net.config&quot;));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre></li>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public WebService()</span><br><span class="line">&#123;</span><br><span class="line">    log4net.Config.XmlConfigurator.ConfigureAndWatch(new System.IO.FileInfo(AppDomain.CurrentDomain.SetupInformation.ApplicationBase + &quot;log4net.config&quot;));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 <blockquote>
 <p>WebService为对应的接口类名</p>
@@ -471,6 +471,26 @@
 <p>CustomService为对应的wcf服务类名</p>
 </blockquote>
 </li>
+</ol>
+<h2 id="ASP-NET-MVC"><a href="#ASP-NET-MVC" class="headerlink" title="ASP.NET MVC"></a>ASP.NET MVC</h2><ol>
+<li><p>进入需要配置log4net的项目目录下,安装log4net;</p>
+<ul>
+<li>右键-管理NuGet程序包,搜索”log4net”并安装;</li>
+<li>引用已下载的log4net.dll文件.</li>
+</ul>
+</li>
+<li><p>程序启动时读取log4net的配置文件,在AssemblyInfo.cs中加入<br> <code>[assembly: log4net.Config.XmlConfigurator(ConfigFile = &quot;web.config&quot;, Watch = true)]</code>;</p>
+</li>
+<li><p>在原有的web.config上加入log4net的输出配置信息;</p>
+<blockquote>
+<p>eg.参考 上面CS程序中的第三点</p>
+</blockquote>
+</li>
+<li><p>在Global.asax的Application_Start()方法里加入以下代码;</p>
+<blockquote>
+<p>eg. Global.asax.cs文件中加入</p>
+</blockquote>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">protected void Application_Start()</span><br><span class="line">&#123;</span><br><span class="line">    AreaRegistration.RegisterAllAreas();</span><br><span class="line">    GlobalConfiguration.Configure(WebApiConfig.Register);</span><br><span class="line">    FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);</span><br><span class="line">    RouteConfig.RegisterRoutes(RouteTable.Routes);</span><br><span class="line">    BundleConfig.RegisterBundles(BundleTable.Bundles);</span><br><span class="line">    //强制调用web.config</span><br><span class="line">    log4net.Config.XmlConfigurator.ConfigureAndWatch(new System.IO.FileInfo(AppDomain.CurrentDomain.SetupInformation.ApplicationBase + &quot;web.config&quot;));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ol>
 
       
@@ -648,7 +668,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CS程序"><span class="nav-text">CS程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类库封装"><span class="nav-text">类库封装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebService"><span class="nav-text">WebService</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WCFService寄宿IIS"><span class="nav-text">WCFService寄宿IIS</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CS程序"><span class="nav-text">CS程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类库封装"><span class="nav-text">类库封装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebService"><span class="nav-text">WebService</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WCFService寄宿IIS"><span class="nav-text">WCFService寄宿IIS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ASP-NET-MVC"><span class="nav-text">ASP.NET MVC</span></a></li></ol></div>
             
 
           </div>
