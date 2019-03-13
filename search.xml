@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[未能加载文件或程序集Microsoft.IdentityModel]]></title>
+    <title><![CDATA[未能加载文件或程序集 Microsoft.IdentityModel]]></title>
     <url>%2F2019%2F03%2F13%2F%E6%9C%AA%E8%83%BD%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6%E6%88%96%E7%A8%8B%E5%BA%8F%E9%9B%86%20Microsoft.IdentityModel%2F</url>
     <content type="text"><![CDATA[本地调试时提示：未能加载文件或程序集“Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35”或它的某一个依赖项。系统找不到指定的文件。”:”Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35原因1缺少“Microsoft.IdentityModel.dll” 2种解决方法 右键单击您的项目并选择&lt;管理NuGet程序包&gt;[Manage NuGet Package]搜索“Microsoft.IdentityModel”并安装. 点击工具-NuGet包管理器-程序包管理器控制台，输入Install-Package Microsoft.IdentityModel -Version 6.1.7600.16394并执行命令. 安装说明：https://www.nuget.org/packages/Microsoft.IdentityModel/]]></content>
       <categories>

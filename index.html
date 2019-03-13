@@ -318,7 +318,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/13/未能加载文件或程序集 Microsoft.IdentityModel/" itemprop="url">未能加载文件或程序集Microsoft.IdentityModel</a></h1>
+                <a class="post-title-link" href="/2019/03/13/未能加载文件或程序集 Microsoft.IdentityModel/" itemprop="url">未能加载文件或程序集 Microsoft.IdentityModel</a></h1>
         
 
         <div class="post-meta">
@@ -392,8 +392,8 @@
       
         
           
-            <h2 id="本地调试时提示：未能加载文件或程序集“Microsoft-IdentityModel-Version-3-5-0-0-Culture-neutral-PublicKeyToken-31bf3856ad364e35”或它的某一个依赖项。系统找不到指定的文件。”-”Microsoft-IdentityModel-Version-3-5-0-0-Culture-neutral-PublicKeyToken-31bf3856ad364e35"><a href="#本地调试时提示：未能加载文件或程序集“Microsoft-IdentityModel-Version-3-5-0-0-Culture-neutral-PublicKeyToken-31bf3856ad364e35”或它的某一个依赖项。系统找不到指定的文件。”-”Microsoft-IdentityModel-Version-3-5-0-0-Culture-neutral-PublicKeyToken-31bf3856ad364e35" class="headerlink" title="本地调试时提示：未能加载文件或程序集“Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35”或它的某一个依赖项。系统找不到指定的文件。”:”Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"></a>本地调试时提示：未能加载文件或程序集“Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35”或它的某一个依赖项。系统找不到指定的文件。”:”Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35</h2><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">缺少“Microsoft.IdentityModel.dll”</span><br></pre></td></tr></table></figure>
-<h2 id="2种解决方法"><a href="#2种解决方法" class="headerlink" title="2种解决方法"></a>2种解决方法</h2><ol>
+            <h3 id="本地调试时提示：未能加载文件或程序集“Microsoft-IdentityModel-Version-3-5-0-0-Culture-neutral-PublicKeyToken-31bf3856ad364e35”或它的某一个依赖项。系统找不到指定的文件。”-”Microsoft-IdentityModel-Version-3-5-0-0-Culture-neutral-PublicKeyToken-31bf3856ad364e35"><a href="#本地调试时提示：未能加载文件或程序集“Microsoft-IdentityModel-Version-3-5-0-0-Culture-neutral-PublicKeyToken-31bf3856ad364e35”或它的某一个依赖项。系统找不到指定的文件。”-”Microsoft-IdentityModel-Version-3-5-0-0-Culture-neutral-PublicKeyToken-31bf3856ad364e35" class="headerlink" title="本地调试时提示：未能加载文件或程序集“Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35”或它的某一个依赖项。系统找不到指定的文件。”:”Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"></a>本地调试时提示：未能加载文件或程序集“Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35”或它的某一个依赖项。系统找不到指定的文件。”:”Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35</h3><h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">缺少“Microsoft.IdentityModel.dll”</span><br></pre></td></tr></table></figure>
+<h3 id="2种解决方法"><a href="#2种解决方法" class="headerlink" title="2种解决方法"></a>2种解决方法</h3><ol>
 <li><p>右键单击您的项目并选择&lt;管理NuGet程序包&gt;[Manage NuGet Package]搜索“Microsoft.IdentityModel”并安装.</p>
 </li>
 <li><p>点击工具-NuGet包管理器-程序包管理器控制台，输入<code>Install-Package Microsoft.IdentityModel -Version 6.1.7600.16394</code>并执行命令.</p>
