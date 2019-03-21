@@ -299,6 +299,132 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/21/webpack打包部署到IIS/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="tracyvon">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="tracyvon's Hexo Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/21/webpack打包部署到IIS/" itemprop="url">webpack打包部署到IIS</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-21T09:27:00+08:00">
+                2019-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>如何部署:</p>
+<ol>
+<li>安装 <a href="https://www.iis.net/downloads/microsoft/url-rewrite" target="_blank" rel="noopener">IIS UrlRewrite</a>;</li>
+<li>在你的网站根目录中创建一个 web.config 文件，内容如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">  &lt;system.webServer&gt;</span><br><span class="line">    &lt;rewrite&gt;</span><br><span class="line">      &lt;rules&gt;</span><br><span class="line">        &lt;rule name=&quot;Handle History Mode and custom 404/500&quot; stopProcessing=&quot;true&quot;&gt;</span><br><span class="line">          &lt;match url=&quot;(.*)&quot; /&gt;</span><br><span class="line">          &lt;conditions logicalGrouping=&quot;MatchAll&quot;&gt;</span><br><span class="line">            &lt;add input=&quot;&#123;REQUEST_FILENAME&#125;&quot; matchType=&quot;IsFile&quot; negate=&quot;true&quot; /&gt;</span><br><span class="line">            &lt;add input=&quot;&#123;REQUEST_FILENAME&#125;&quot; matchType=&quot;IsDirectory&quot; negate=&quot;true&quot; /&gt;</span><br><span class="line">          &lt;/conditions&gt;</span><br><span class="line">          &lt;action type=&quot;Rewrite&quot; url=&quot;/&quot; /&gt;</span><br><span class="line">        &lt;/rule&gt;</span><br><span class="line">      &lt;/rules&gt;</span><br><span class="line">    &lt;/rewrite&gt;</span><br><span class="line">  &lt;/system.webServer&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>IIS建立网站后访问还是有问题，把网站对应的应用池改为用 .Net v2.0 。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/13/未能加载文件或程序集 Microsoft.IdentityModel/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -763,7 +889,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -785,7 +911,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
